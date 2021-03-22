@@ -1,7 +1,7 @@
 # APS-Java
 Projeto de biblioteca eletrônica para a APS (Atividade Prática Supervisionada) do curso de Ciência da Computação.
 
-###### Observações: O projeto foi escrito na linguagem de programação Java 8 através da IDE Netbeans 8.2
+###### Observações: O projeto foi escrito na linguagem de programação Java 16 através da IDE Netbeans 12.0
 
 ___
 
