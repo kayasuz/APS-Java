@@ -16,7 +16,7 @@ public class Biblioteca {
      */
     public static void main(String[] args) {
         
-        biblioteca b1 = new biblioteca();
+        //biblioteca b1 = new biblioteca();
         
         // Classe principal
     }
