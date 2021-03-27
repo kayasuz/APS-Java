@@ -100,7 +100,7 @@ public class LoginView extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
 
-        MenuView telaDeMenu = new MenuView();
+        MenuViewHome telaDeMenu = new MenuViewHome();
         telaDeMenu.setVisible(true);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
