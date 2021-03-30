@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Usuario;
-import view.CadastroView;
+import view.MenuViewUsuarios;
 
 /**
  *
@@ -21,9 +21,9 @@ import view.CadastroView;
  */
 public class FormCadastroController {
     
-    private CadastroView view;
+    private MenuViewUsuarios view;
 
-    public FormCadastroController(CadastroView view) {
+    public FormCadastroController(MenuViewUsuarios view) {
         this.view = view;
     }
     
@@ -46,7 +46,7 @@ public class FormCadastroController {
             JOptionPane.showMessageDialog(null, "Usuário Salvo com Sucesso");
             
          } catch (SQLException ex) {
-            Logger.getLogger(CadastroView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuViewUsuarios.class.getName()).log(Level.SEVERE, null, ex);
         }
    
     }

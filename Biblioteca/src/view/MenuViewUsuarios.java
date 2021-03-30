@@ -5,17 +5,30 @@
  */
 package view;
 
-/**
- *
- * @author joaon
- */
+import controller.FormCadastroController;
+import dao.Conexao;
+import dao.UsuarioDAO;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import model.Usuario;
+
 public class MenuViewUsuarios extends javax.swing.JFrame {
 
+    private final FormCadastroController controller;
+    
     /**
      * Creates new form MenuView
      */
     public MenuViewUsuarios() {
         initComponents();
+            controller = new FormCadastroController(this);
     }
 
     /**
@@ -27,128 +40,258 @@ public class MenuViewUsuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSplitPane1 = new javax.swing.JSplitPane();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jPopupMenu1 = new javax.swing.JPopupMenu();
-        jSptMenu = new javax.swing.JSeparator();
-        jBtnHome = new javax.swing.JButton();
-        jBtnLivros = new javax.swing.JButton();
-        jBtnUsuarios = new javax.swing.JButton();
-        jBtnEmprestimos = new javax.swing.JButton();
-        jBtnSair = new javax.swing.JButton();
-        jLbLogo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-
-        jMenu1.setText("jMenu1");
-
-        jMenuItem1.setText("jMenuItem1");
+        SptMenu = new javax.swing.JSeparator();
+        BtnHome = new javax.swing.JButton();
+        BtnLivros = new javax.swing.JButton();
+        BtnUsuarios = new javax.swing.JButton();
+        BtnEmprestimos = new javax.swing.JButton();
+        BtnSair = new javax.swing.JButton();
+        LbLogo = new javax.swing.JLabel();
+        LbTitulo1 = new javax.swing.JLabel();
+        LbUsuario = new javax.swing.JLabel();
+        LbSenha = new javax.swing.JLabel();
+        TgBtnLimpar = new javax.swing.JToggleButton();
+        TxtNome = new javax.swing.JTextField();
+        TxtSenha = new javax.swing.JPasswordField();
+        TxtEndereco = new javax.swing.JTextField();
+        TxtTelefone = new javax.swing.JFormattedTextField();
+        LbNome = new javax.swing.JLabel();
+        TxtEmail = new javax.swing.JTextField();
+        LbEmail = new javax.swing.JLabel();
+        LbEndereco = new javax.swing.JLabel();
+        TgBtnSalvar = new javax.swing.JToggleButton();
+        LbTelefone = new javax.swing.JLabel();
+        TxtUsuario = new javax.swing.JTextField();
+        LbTitulo2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 0, 51));
 
-        jSptMenu.setForeground(new java.awt.Color(0, 0, 0));
-        jSptMenu.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        SptMenu.setForeground(new java.awt.Color(0, 0, 0));
+        SptMenu.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jBtnHome.setText("Home");
-        jBtnHome.addActionListener(new java.awt.event.ActionListener() {
+        BtnHome.setText("Home");
+        BtnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnHomeActionPerformed(evt);
+                BtnHomeActionPerformed(evt);
             }
         });
 
-        jBtnLivros.setText("Gerenciar livros");
-        jBtnLivros.addActionListener(new java.awt.event.ActionListener() {
+        BtnLivros.setText("Gerenciar livros");
+        BtnLivros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnLivrosActionPerformed(evt);
+                BtnLivrosActionPerformed(evt);
             }
         });
 
-        jBtnUsuarios.setText("Gerenciar usuários");
+        BtnUsuarios.setText("Gerenciar usuários");
 
-        jBtnEmprestimos.setText("Gerenciar empréstimos");
-        jBtnEmprestimos.addActionListener(new java.awt.event.ActionListener() {
+        BtnEmprestimos.setText("Gerenciar empréstimos");
+        BtnEmprestimos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnEmprestimosActionPerformed(evt);
+                BtnEmprestimosActionPerformed(evt);
             }
         });
 
-        jBtnSair.setText("Sair");
-        jBtnSair.addActionListener(new java.awt.event.ActionListener() {
+        BtnSair.setText("Sair");
+        BtnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnSairActionPerformed(evt);
+                BtnSairActionPerformed(evt);
             }
         });
 
-        jLbLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/WhatsApp Image 2021-03-23 at 00.02.38.jpeg"))); // NOI18N
-        jLbLogo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        LbLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/WhatsApp Image 2021-03-23 at 00.02.38.jpeg"))); // NOI18N
+        LbLogo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Cadastrar novo usuário");
+        LbTitulo1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LbTitulo1.setText("Cadastrar novo usuário");
+
+        LbUsuario.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        LbUsuario.setText("Usuário");
+
+        LbSenha.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        LbSenha.setText("Senha");
+
+        TgBtnLimpar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        TgBtnLimpar.setText("Limpar");
+
+        TxtSenha.setToolTipText("");
+
+        TxtEndereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtEnderecoActionPerformed(evt);
+            }
+        });
+
+        try {
+            TxtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("## #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        TxtTelefone.setToolTipText("");
+
+        LbNome.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        LbNome.setText("Nome");
+
+        TxtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtEmailActionPerformed(evt);
+            }
+        });
+
+        LbEmail.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        LbEmail.setText("Email");
+
+        LbEndereco.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        LbEndereco.setText("Endereço");
+
+        TgBtnSalvar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        TgBtnSalvar.setText("Salvar");
+        TgBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TgBtnSalvarActionPerformed(evt);
+            }
+        });
+
+        LbTelefone.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        LbTelefone.setText("Telefone");
+
+        LbTitulo2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LbTitulo2.setText("Alterar usuários");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jBtnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnLivros, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnEmprestimos)
-                    .addComponent(jBtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLbLogo))
-                .addGap(53, 53, 53)
-                .addComponent(jSptMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addContainerGap(296, Short.MAX_VALUE))
+                    .addComponent(BtnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnLivros, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnEmprestimos)
+                    .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LbLogo))
+                .addGap(50, 50, 50)
+                .addComponent(SptMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(LbTitulo2)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(LbNome)
+                                    .addComponent(TxtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(LbEndereco)
+                                    .addComponent(LbTitulo1)
+                                    .addComponent(LbEmail)
+                                    .addComponent(TxtEmail)
+                                    .addComponent(TxtEndereco))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(LbTelefone)
+                                    .addComponent(LbUsuario)
+                                    .addComponent(LbSenha)
+                                    .addComponent(TxtUsuario)
+                                    .addComponent(TxtSenha)
+                                    .addComponent(TxtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                                .addGap(40, 40, 40))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(TgBtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
+                        .addComponent(TgBtnLimpar)
+                        .addGap(109, 109, 109))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSptMenu, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(SptMenu, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
-                .addComponent(jLbLogo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LbLogo)
                 .addGap(18, 18, 18)
-                .addComponent(jBtnHome)
+                .addComponent(BtnHome)
                 .addGap(18, 18, 18)
-                .addComponent(jBtnLivros, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnLivros, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jBtnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jBtnEmprestimos, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnEmprestimos, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jBtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(LbTitulo1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LbUsuario)
+                    .addComponent(LbNome))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LbSenha)
+                    .addComponent(LbEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LbTelefone)
+                    .addComponent(LbEndereco))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TxtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TgBtnSalvar)
+                    .addComponent(TgBtnLimpar))
+                .addGap(18, 18, 18)
+                .addComponent(LbTitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBtnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnHomeActionPerformed
+    private void BtnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHomeActionPerformed
         new MenuViewHome().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jBtnHomeActionPerformed
+    }//GEN-LAST:event_BtnHomeActionPerformed
 
-    private void jBtnLivrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLivrosActionPerformed
+    private void BtnLivrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLivrosActionPerformed
         new MenuViewLivros().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jBtnLivrosActionPerformed
+    }//GEN-LAST:event_BtnLivrosActionPerformed
 
-    private void jBtnEmprestimosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEmprestimosActionPerformed
+    private void BtnEmprestimosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEmprestimosActionPerformed
         new MenuViewEmprestimos().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jBtnEmprestimosActionPerformed
+    }//GEN-LAST:event_BtnEmprestimosActionPerformed
 
-    private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
+    private void BtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSairActionPerformed
         dispose();
-    }//GEN-LAST:event_jBtnSairActionPerformed
+    }//GEN-LAST:event_BtnSairActionPerformed
+
+    private void TxtEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtEnderecoActionPerformed
+
+    private void TxtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtEmailActionPerformed
+
+    private void TgBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TgBtnSalvarActionPerformed
+        controller.salvaUsuario();
+    }//GEN-LAST:event_TgBtnSalvarActionPerformed
     
     /**
      * @param args the command line arguments
@@ -176,9 +319,6 @@ public class MenuViewUsuarios extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MenuViewUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -188,18 +328,79 @@ public class MenuViewUsuarios extends javax.swing.JFrame {
         });
     }
 
+    public JTextField getTxtEmail() {
+        return TxtEmail;
+    }
+
+    public void setTxtEmail(JTextField txtEmail) {
+        this.TxtEmail = txtEmail;
+    }
+
+    public JTextField getTxtEndereco() {
+        return TxtEndereco;
+    }
+
+    public void setTxtEndereco(JTextField txtEndereco) {
+        this.TxtEndereco = txtEndereco;
+    }
+
+    public JTextField getTxtNome() {
+        return TxtNome;
+    }
+
+    public void setTxtNome(JTextField txtNome) {
+        this.TxtNome = txtNome;
+    }
+
+    public JPasswordField getTxtSenha() {
+        return TxtSenha;
+    }
+
+    public void setTxtSenha(JPasswordField txtSenha) {
+        this.TxtSenha = txtSenha;
+    }
+
+    public JFormattedTextField getTxtTelefone() {
+        return TxtTelefone;
+    }
+
+    public void setTxtTelefone(JFormattedTextField txtTelefone) {
+        this.TxtTelefone = txtTelefone;
+    }
+
+    public JTextField getTxtUsuario() {
+        return TxtUsuario;
+    }
+
+    public void setTxtUsuario(JTextField txtUsuario) {
+        this.TxtUsuario = txtUsuario;
+    }
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnEmprestimos;
-    private javax.swing.JButton jBtnHome;
-    private javax.swing.JButton jBtnLivros;
-    private javax.swing.JButton jBtnSair;
-    private javax.swing.JButton jBtnUsuarios;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLbLogo;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JSeparator jSptMenu;
+    private javax.swing.JButton BtnEmprestimos;
+    private javax.swing.JButton BtnHome;
+    private javax.swing.JButton BtnLivros;
+    private javax.swing.JButton BtnSair;
+    private javax.swing.JButton BtnUsuarios;
+    private javax.swing.JLabel LbEmail;
+    private javax.swing.JLabel LbEndereco;
+    private javax.swing.JLabel LbLogo;
+    private javax.swing.JLabel LbNome;
+    private javax.swing.JLabel LbSenha;
+    private javax.swing.JLabel LbTelefone;
+    private javax.swing.JLabel LbTitulo1;
+    private javax.swing.JLabel LbTitulo2;
+    private javax.swing.JLabel LbUsuario;
+    private javax.swing.JSeparator SptMenu;
+    private javax.swing.JToggleButton TgBtnLimpar;
+    private javax.swing.JToggleButton TgBtnSalvar;
+    private javax.swing.JTextField TxtEmail;
+    private javax.swing.JTextField TxtEndereco;
+    private javax.swing.JTextField TxtNome;
+    private javax.swing.JPasswordField TxtSenha;
+    private javax.swing.JFormattedTextField TxtTelefone;
+    private javax.swing.JTextField TxtUsuario;
     // End of variables declaration//GEN-END:variables
 }
