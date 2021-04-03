@@ -35,7 +35,7 @@ import javax.swing.JTextField;
  * @authors kayas, joaon, lucib, ?
  */
 public class AdminViewUsuarios extends javax.swing.JFrame {
-
+    
     private final FormCadastroController controller;
     
     /**
@@ -55,6 +55,7 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        TxId = new javax.swing.JTextField();
         SptMenu = new javax.swing.JSeparator();
         PainelMenu = new javax.swing.JPanel();
         LbLogo = new javax.swing.JLabel();
@@ -82,6 +83,9 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
         BtnLimpar = new javax.swing.JButton();
         LbAlterar = new javax.swing.JLabel();
         BoxDadosUsuarios = new javax.swing.JPanel();
+
+        TxId.setEditable(false);
+        TxId.setEnabled(false);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administrador - Gerenciar usuários");
@@ -360,18 +364,18 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TgBtnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TgBtnHomeActionPerformed
-        new AdminViewHome().setVisible(true);
         dispose();
+        new AdminViewHome().setVisible(true);
     }//GEN-LAST:event_TgBtnHomeActionPerformed
 
     private void TgBtnLivrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TgBtnLivrosActionPerformed
-        new AdminViewLivros().setVisible(true);
         dispose();
+        new AdminViewLivros().setVisible(true);
     }//GEN-LAST:event_TgBtnLivrosActionPerformed
 
     private void TgBtnEmprestimosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TgBtnEmprestimosActionPerformed
-        new AdminViewEmprestimos().setVisible(true);
         dispose();
+        new AdminViewEmprestimos().setVisible(true);
     }//GEN-LAST:event_TgBtnEmprestimosActionPerformed
 
     private void BtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSairActionPerformed
@@ -407,23 +411,18 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminViewUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminViewUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminViewUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(AdminViewUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }//</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AdminViewUsuarios().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new AdminViewUsuarios().setVisible(true);
         });
     }
+
+    public JTextField getTxId() { return TxId; }
+    public void setTxId(JTextField TxId) { this.TxId = TxId; }
 
     public JTextField getTxtNome() { return TxtNome; }
     public void setTxtNome(JTextField TxtNome) { this.TxtNome = TxtNome; }
@@ -465,6 +464,7 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
     private javax.swing.JToggleButton TgBtnHome;
     private javax.swing.JToggleButton TgBtnLivros;
     private javax.swing.JToggleButton TgBtnUsuarios;
+    private javax.swing.JTextField TxId;
     private javax.swing.JTextField TxtEmail;
     private javax.swing.JTextField TxtEndereco;
     private javax.swing.JTextField TxtNome;

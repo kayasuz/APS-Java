@@ -22,23 +22,44 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- *///</editor-fold>
-package dao;
+ */
+//</editor-fold>
+package controller;
 
+import dao.Conexao;
+import dao.UsuarioDAO;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import model.Usuario;
+import view.AdminViewHome;
+import view.LoginView;
 
 /**
  *
  * @authors kayas, joaon, lucib, ?
  */
-public class Conexao {
+public class LoginController {
+    private final LoginView view;
     
-    public Connection getConnection() throws SQLException {
+    public LoginController(LoginView view) { this.view = view; }
+    
+    public void autenticar() throws SQLException {
+        String userName =  view.getTxtUsuario().getText();
+        char[] senha = view.getTxtSenha().getPassword();
         
-        Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/BD_BIBLIOTECA", "postgres", "070302");
+        Usuario usuarioAutenticar = new Usuario(userName, senha);
         
-        return conexao;
+        Connection conexao = new Conexao().getConnection();
+        UsuarioDAO usuarioDao = new UsuarioDAO(conexao);
+        
+        boolean existe = usuarioDao.existeNoBancoPorUsuarioESenha(usuarioAutenticar);
+        
+        if(existe) {
+            view.dispose();
+            new AdminViewHome().setVisible(true);
+        }else {
+            JOptionPane.showMessageDialog(view, "Usuário e/ou senha inválidos.");
+        }
     }
 }

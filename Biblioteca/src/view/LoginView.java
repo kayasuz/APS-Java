@@ -26,17 +26,27 @@
 //</editor-fold>
 package view;
 
+import controller.LoginController;
+import java.awt.event.KeyEvent;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @authors kayas, joaon, lucib, ?
  */
 public class LoginView extends javax.swing.JFrame {
+    private final LoginController controller;
 
     /**
      * Creates new form LoginView
      */
     public LoginView() {
         initComponents();
+        controller = new LoginController(this);
     }
 
     /**
@@ -68,8 +78,20 @@ public class LoginView extends javax.swing.JFrame {
         LbUsuario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         LbUsuario.setText("Usuário");
 
+        TxtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TxtUsuarioKeyPressed(evt);
+            }
+        });
+
         LbSenha.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         LbSenha.setText("Senha");
+
+        TxtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TxtSenhaKeyPressed(evt);
+            }
+        });
 
         BtnEntrar.setBackground(new java.awt.Color(255, 255, 255));
         BtnEntrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -140,9 +162,32 @@ public class LoginView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEntrarActionPerformed
-        new AdminViewHome().setVisible(true);
-        dispose();
+        try {
+            controller.autenticar();
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_BtnEntrarActionPerformed
+
+    private void TxtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtUsuarioKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            try {
+                controller.autenticar();
+            } catch (SQLException ex) {
+                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_TxtUsuarioKeyPressed
+
+    private void TxtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtSenhaKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            try {
+                controller.autenticar();
+            } catch (SQLException ex) {
+                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_TxtSenhaKeyPressed
 
     /**
      * @param args the command line arguments
@@ -160,23 +205,21 @@ public class LoginView extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }//</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginView().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new LoginView().setVisible(true);
         });
     }
+
+    public JTextField getTxtUsuario() { return TxtUsuario; }
+    public void setTxtUsuario(JTextField TxtUsuario) { this.TxtUsuario = TxtUsuario; }
+
+    public JPasswordField getTxtSenha() { return TxtSenha; }
+    public void setTxtSenha(JPasswordField TxtSenha) { this.TxtSenha = TxtSenha; }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnEntrar;

@@ -27,7 +27,10 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import model.Usuario;
 
 /**
@@ -41,19 +44,88 @@ public class UsuarioDAO {
     public UsuarioDAO(Connection connection) { this.connection = connection; }
     
     public void insert(Usuario usuario) throws SQLException {
-        
-        String user = usuario.getUsuario();
-        String senha = usuario.getSenha();
-        String nome = usuario.getNome();
-        String email = usuario.getEmail();
-        String endereco = usuario.getEndereco();
-        String telefone = usuario.getTelefone();
-        
-        String sql = "insert into usuario(usuario, senha, nome, email, endereco, telefone) " +
-                     "values('"+user+"', '"+senha+"', '"+nome+"', '"+email+"', '"+endereco+"', '"+telefone+"');";
-        
+        String sql = "INSERT INTO usuario(usuario, senha, nome, email, endereco, telefone) " +
+                     "VALUES(?, ?, ?, ?, ?, ?);";
         PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, usuario.getUsuario());
+            statement.setString(2, Arrays.toString(usuario.getSenha()));
+            statement.setString(3, usuario.getNome());
+            statement.setString(4, usuario.getEmail());
+            statement.setString(5, usuario.getEndereco());
+            statement.setString(6, usuario.getTelefone());
+            statement.execute();
+    }
+
+    public void update(Usuario usuario) throws SQLException {
+        String sql = "UPDATE usuario SET usuario = ?, senha = ?, nome = ?, email = ?, endereco = ?, telefone = ? " +
+                     "WHERE id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, usuario.getUsuario());
+            statement.setString(2, Arrays.toString(usuario.getSenha()));
+            statement.setString(3, usuario.getNome());
+            statement.setString(4, usuario.getEmail());
+            statement.setString(5, usuario.getEndereco());
+            statement.setString(6, usuario.getTelefone());
+            statement.setInt(7, usuario.getId());
+            statement.execute();
+    }
+    
+    public void insertOrUpdate(Usuario usuario) throws SQLException {
+        if(usuario.getId() > 0) { update(usuario); }
+        else { insert(usuario); }
+    }
+
+    public void delete(Usuario usuario) throws SQLException {
+        String sql = "DELETE FROM usuario WHERE id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, usuario.getId());
+            statement.execute();
+    }
+
+    public ArrayList<Usuario> selectAll() throws SQLException{
+        String sql = "SELECT * FROM usuario";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        
+        return pesquisa(statement);
+    }
+
+    private ArrayList<Usuario> pesquisa(PreparedStatement statement) throws SQLException {
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        
         statement.execute();
-        connection.close();
+        ResultSet resultSet = statement.getResultSet();
+        
+        while(resultSet.next()) {
+            int id = resultSet.getInt("id");
+            String usuario = resultSet.getString("usuario");
+            String senha = resultSet.getString("senha");
+            String nome = resultSet.getString("nome");
+            String email = resultSet.getString("email");
+            String endereco = resultSet.getString("endereco");
+            String telefone = resultSet.getString("telefone");
+            
+            Usuario usuarioComDadosDoBanco = new Usuario(id, usuario, senha.toCharArray(), nome, email, endereco, telefone);
+            usuarios.add(usuarioComDadosDoBanco);
+        }
+        
+        return usuarios;
+    }
+
+    public Usuario selectPorId(Usuario usuario) throws SQLException {
+        String sql = "SELECT * FROM usuario WHERE id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, usuario.getId());
+        return pesquisa(statement).get(0);
+    }
+
+    public boolean existeNoBancoPorUsuarioESenha(Usuario usuario) throws SQLException {
+        String sql = "SELECT * FROM usuario WHERE usuario = ? AND senha = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, usuario.getUsuario());
+            statement.setString(2, Arrays.toString(usuario.getSenha()));
+            statement.execute();
+        
+        ResultSet resultSet = statement.getResultSet();
+        return resultSet.next();
     }
 }

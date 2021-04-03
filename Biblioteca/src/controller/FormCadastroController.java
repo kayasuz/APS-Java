@@ -41,28 +41,26 @@ import view.AdminViewUsuarios;
  */
 public class FormCadastroController {
     
-    private AdminViewUsuarios view;
+    private final AdminViewUsuarios view;
     
     public FormCadastroController(AdminViewUsuarios view) { this.view = view; }
     
     public void salvaUsuario() {
-        
-        String userName =  view.getTxtUsuario().getText();
+        String id = view.getTxId().getText();
+        String userName = view.getTxtUsuario().getText();
         char[] senha = view.getTxtSenha().getPassword();
         String nome =  view.getTxtNome().getText();
         String email = view.getTxtEmail().getText();
         String endereco = view.getTxtEndereco().getText();
         String telefone = view.getTxtTelefone().getText();
         
-        Usuario usuario = new Usuario(userName, senha, nome, email, endereco, telefone);
+        Usuario usuario = new Usuario(Integer.parseInt(id), userName, senha, nome, email, endereco, telefone);
         
         try {
             Connection conexao = new Conexao().getConnection();
             UsuarioDAO usuarioDao = new UsuarioDAO(conexao);
             usuarioDao.insert(usuario);
-            
             JOptionPane.showMessageDialog(null, "Usuário salvo com sucesso.");
-            
         }catch(SQLException ex) {
             Logger.getLogger(AdminViewUsuarios.class.getName()).log(Level.SEVERE, null, ex);
         }
