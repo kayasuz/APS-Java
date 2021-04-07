@@ -81,8 +81,11 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
         TxtTelefone = new javax.swing.JFormattedTextField();
         BtnSalvar = new javax.swing.JButton();
         BtnLimpar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         LbAlterar = new javax.swing.JLabel();
         BoxDadosUsuarios = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         TxId.setEditable(false);
         TxId.setEnabled(false);
@@ -229,6 +232,9 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jButton1.setText("Alterar");
+
         javax.swing.GroupLayout BoxDadosCadastroLayout = new javax.swing.GroupLayout(BoxDadosCadastro);
         BoxDadosCadastro.setLayout(BoxDadosCadastroLayout);
         BoxDadosCadastroLayout.setHorizontalGroup(
@@ -253,10 +259,12 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(BoxDadosCadastroLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
-                .addComponent(BtnSalvar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BtnLimpar)
-                .addGap(74, 74, 74))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BoxDadosCadastroLayout.setVerticalGroup(
             BoxDadosCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,9 +294,10 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
                     .addComponent(TxtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(BoxDadosCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BoxDadosCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSalvar)
-                    .addComponent(BtnLimpar))
+                    .addComponent(BtnLimpar)
+                    .addComponent(jButton1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -298,15 +307,34 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
         BoxDadosUsuarios.setBackground(new java.awt.Color(255, 255, 255));
         BoxDadosUsuarios.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Nome", "Email", "Endereço", "Usuário", "Senha", "Telefone"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout BoxDadosUsuariosLayout = new javax.swing.GroupLayout(BoxDadosUsuarios);
         BoxDadosUsuarios.setLayout(BoxDadosUsuariosLayout);
         BoxDadosUsuariosLayout.setHorizontalGroup(
             BoxDadosUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(BoxDadosUsuariosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
+                .addContainerGap())
         );
         BoxDadosUsuariosLayout.setVerticalGroup(
             BoxDadosUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BoxDadosUsuariosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout PainelUsuariosLayout = new javax.swing.GroupLayout(PainelUsuarios);
@@ -317,12 +345,12 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PainelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BoxDadosCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BoxDadosUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PainelUsuariosLayout.createSequentialGroup()
                         .addGroup(PainelUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LbCadastro)
                             .addComponent(LbAlterar))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(BoxDadosUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         PainelUsuariosLayout.setVerticalGroup(
@@ -347,17 +375,17 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
                 .addComponent(PainelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(SptMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(PainelUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PainelUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(SptMenu, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(PainelUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(PainelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(PainelUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+                .addComponent(PainelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -471,5 +499,8 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
     private javax.swing.JPasswordField TxtSenha;
     private javax.swing.JFormattedTextField TxtTelefone;
     private javax.swing.JTextField TxtUsuario;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

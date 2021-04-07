@@ -46,7 +46,7 @@ public class FormCadastroController {
     public FormCadastroController(AdminViewUsuarios view) { this.view = view; }
     
     public void salvaUsuario() {
-        String id = view.getTxId().getText();
+        int id = 0;
         String userName = view.getTxtUsuario().getText();
         char[] senha = view.getTxtSenha().getPassword();
         String nome =  view.getTxtNome().getText();
@@ -54,7 +54,7 @@ public class FormCadastroController {
         String endereco = view.getTxtEndereco().getText();
         String telefone = view.getTxtTelefone().getText();
         
-        Usuario usuario = new Usuario(Integer.parseInt(id), userName, senha, nome, email, endereco, telefone);
+        Usuario usuario = new Usuario(0, userName, senha, nome, email, endereco, telefone);
         
         try {
             Connection conexao = new Conexao().getConnection();
