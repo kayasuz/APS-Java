@@ -82,6 +82,7 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
         BtnSalvar = new javax.swing.JButton();
         BtnLimpar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         LbAlterar = new javax.swing.JLabel();
         BoxDadosUsuarios = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -235,6 +236,9 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jButton1.setText("Alterar");
 
+        jButton2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jButton2.setText("Excluir");
+
         javax.swing.GroupLayout BoxDadosCadastroLayout = new javax.swing.GroupLayout(BoxDadosCadastro);
         BoxDadosCadastro.setLayout(BoxDadosCadastroLayout);
         BoxDadosCadastroLayout.setHorizontalGroup(
@@ -264,6 +268,8 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
                 .addComponent(BtnLimpar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BoxDadosCadastroLayout.setVerticalGroup(
@@ -297,7 +303,8 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
                 .addGroup(BoxDadosCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSalvar)
                     .addComponent(BtnLimpar)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -500,6 +507,7 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField TxtTelefone;
     private javax.swing.JTextField TxtUsuario;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
