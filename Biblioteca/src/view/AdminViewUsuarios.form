@@ -244,7 +244,7 @@
         <Component class="javax.swing.JLabel" name="LbCadastro">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="18" style="0"/>
+              <Font name="Tahoma" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastrar novo usu&#xe1;rio"/>
           </Properties>
@@ -452,7 +452,7 @@
         <Component class="javax.swing.JLabel" name="LbAlterar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="18" style="0"/>
+              <Font name="Tahoma" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Alterar usu&#xe1;rios"/>
           </Properties>

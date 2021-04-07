@@ -187,7 +187,7 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
         PainelUsuarios.setBackground(new java.awt.Color(255, 255, 255));
         PainelUsuarios.setPreferredSize(new java.awt.Dimension(504, 36));
 
-        LbCadastro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LbCadastro.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         LbCadastro.setText("Cadastrar novo usuário");
 
         BoxDadosCadastro.setBackground(new java.awt.Color(255, 255, 255));
@@ -308,7 +308,7 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        LbAlterar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LbAlterar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         LbAlterar.setText("Alterar usuários");
 
         BoxDadosUsuarios.setBackground(new java.awt.Color(255, 255, 255));
