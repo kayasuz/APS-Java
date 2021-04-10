@@ -23,13 +23,21 @@
  */
 package view;
 
+import java.awt.CardLayout;
+
 public class UserViewHome extends javax.swing.JFrame {
 
     /**
      * Creates new form UserViewHome
      */
+    
+    CardLayout cardLayout;
+    
     public UserViewHome() {
         initComponents();
+        
+        cardLayout = (CardLayout)(painelMutavel.getLayout());
+      
     }
 
     /**
@@ -42,6 +50,11 @@ public class UserViewHome extends javax.swing.JFrame {
     private void initComponents() {
 
         SptMenu = new javax.swing.JSeparator();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jPanel3 = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -50,15 +63,14 @@ public class UserViewHome extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        botaoDestaquesDeHoje = new javax.swing.JButton();
+        botaoAventura = new javax.swing.JButton();
+        botaoEducacional = new javax.swing.JButton();
+        botaoFantasia = new javax.swing.JButton();
+        botaoSuspense = new javax.swing.JButton();
+        botaoRomance = new javax.swing.JButton();
+        botaoComedia = new javax.swing.JButton();
+        botaoTerror = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
@@ -67,10 +79,69 @@ public class UserViewHome extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         SptMenu1 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
+        botaoCulinaria = new javax.swing.JButton();
+        painelMutavel = new javax.swing.JPanel();
+        cardDestaquesDeHoje = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        cardAventura = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        cardEducacional = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        cardFantasia = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        cardSuspense = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        cardRomance = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jSeparator8 = new javax.swing.JSeparator();
+        cardComedia = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
+        cardTerror = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jSeparator10 = new javax.swing.JSeparator();
+        cardCulinaria = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jSeparator11 = new javax.swing.JSeparator();
 
         SptMenu.setForeground(new java.awt.Color(0, 0, 0));
         SptMenu.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jInternalFrame1.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,38 +168,61 @@ public class UserViewHome extends javax.swing.JFrame {
 
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
 
-        jButton1.setText("Destaques de Hoje");
-
-        jButton2.setText("Aventura");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botaoDestaquesDeHoje.setText("Destaques de Hoje");
+        botaoDestaquesDeHoje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botaoDestaquesDeHojeActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Educacional");
-
-        jButton4.setText("Fantasia");
-
-        jButton5.setText("Suspense");
-
-        jButton6.setText("Romance");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        botaoAventura.setText("Aventura");
+        botaoAventura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                botaoAventuraActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Comédia");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        botaoEducacional.setText("Educacional");
+        botaoEducacional.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                botaoEducacionalActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Terror");
+        botaoFantasia.setText("Fantasia");
+        botaoFantasia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoFantasiaActionPerformed(evt);
+            }
+        });
 
-        jToggleButton1.setText("Culinária");
+        botaoSuspense.setText("Suspense");
+        botaoSuspense.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSuspenseActionPerformed(evt);
+            }
+        });
+
+        botaoRomance.setText("Romance");
+        botaoRomance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoRomanceActionPerformed(evt);
+            }
+        });
+
+        botaoComedia.setText("Comédia");
+        botaoComedia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoComediaActionPerformed(evt);
+            }
+        });
+
+        botaoTerror.setText("Terror");
+        botaoTerror.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoTerrorActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("Meu Perfil");
 
@@ -149,6 +243,13 @@ public class UserViewHome extends javax.swing.JFrame {
         SptMenu1.setForeground(new java.awt.Color(0, 0, 0));
         SptMenu1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        botaoCulinaria.setText("Culinária");
+        botaoCulinaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCulinariaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -161,7 +262,7 @@ public class UserViewHome extends javax.swing.JFrame {
                             .addComponent(jTextField1)
                             .addComponent(jSeparator1)
                             .addComponent(jSeparator3)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoDestaquesDeHoje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jButton10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -169,17 +270,14 @@ public class UserViewHome extends javax.swing.JFrame {
                                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(botaoAventura, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(botaoEducacional, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(botaoFantasia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(botaoSuspense, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(4, 4, 4)
-                                        .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(botaoComedia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -188,10 +286,12 @@ public class UserViewHome extends javax.swing.JFrame {
                                         .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
+                                        .addComponent(botaoRomance, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(botaoCulinaria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(botaoTerror, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                             .addComponent(jSeparator2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SptMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -227,23 +327,23 @@ public class UserViewHome extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(botaoDestaquesDeHoje)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton6))
+                    .addComponent(botaoAventura)
+                    .addComponent(botaoRomance))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton7))
+                    .addComponent(botaoEducacional)
+                    .addComponent(botaoComedia))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton8))
+                    .addComponent(botaoFantasia)
+                    .addComponent(botaoTerror))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jToggleButton1))
+                    .addComponent(botaoSuspense)
+                    .addComponent(botaoCulinaria))
                 .addGap(38, 38, 38)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -256,22 +356,292 @@ public class UserViewHome extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton10)
                     .addComponent(jButton14))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(SptMenu1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        painelMutavel.setBackground(new java.awt.Color(255, 255, 255));
+        painelMutavel.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+        cardDestaquesDeHoje.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel10.setText("Destaques de Hoje");
+
+        javax.swing.GroupLayout cardDestaquesDeHojeLayout = new javax.swing.GroupLayout(cardDestaquesDeHoje);
+        cardDestaquesDeHoje.setLayout(cardDestaquesDeHojeLayout);
+        cardDestaquesDeHojeLayout.setHorizontalGroup(
+            cardDestaquesDeHojeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardDestaquesDeHojeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addContainerGap(446, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 611, Short.MAX_VALUE)
+        cardDestaquesDeHojeLayout.setVerticalGroup(
+            cardDestaquesDeHojeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardDestaquesDeHojeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addContainerGap(593, Short.MAX_VALUE))
         );
+
+        painelMutavel.add(cardDestaquesDeHoje, "cardDestaquesDeHoje");
+
+        cardAventura.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel7.setText("Aventura");
+
+        jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout cardAventuraLayout = new javax.swing.GroupLayout(cardAventura);
+        cardAventura.setLayout(cardAventuraLayout);
+        cardAventuraLayout.setHorizontalGroup(
+            cardAventuraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardAventuraLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cardAventuraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cardAventuraLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(0, 551, Short.MAX_VALUE))
+                    .addComponent(jSeparator4))
+                .addContainerGap())
+        );
+        cardAventuraLayout.setVerticalGroup(
+            cardAventuraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardAventuraLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelMutavel.add(cardAventura, "cardAventura");
+
+        cardEducacional.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel8.setText("Educacional");
+
+        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout cardEducacionalLayout = new javax.swing.GroupLayout(cardEducacional);
+        cardEducacional.setLayout(cardEducacionalLayout);
+        cardEducacionalLayout.setHorizontalGroup(
+            cardEducacionalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardEducacionalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cardEducacionalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cardEducacionalLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(0, 516, Short.MAX_VALUE))
+                    .addComponent(jSeparator5))
+                .addContainerGap())
+        );
+        cardEducacionalLayout.setVerticalGroup(
+            cardEducacionalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardEducacionalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelMutavel.add(cardEducacional, "cardEducacional");
+
+        cardFantasia.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel9.setText("Fantasia");
+
+        jSeparator6.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout cardFantasiaLayout = new javax.swing.GroupLayout(cardFantasia);
+        cardFantasia.setLayout(cardFantasiaLayout);
+        cardFantasiaLayout.setHorizontalGroup(
+            cardFantasiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardFantasiaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cardFantasiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cardFantasiaLayout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(0, 559, Short.MAX_VALUE))
+                    .addComponent(jSeparator6))
+                .addContainerGap())
+        );
+        cardFantasiaLayout.setVerticalGroup(
+            cardFantasiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardFantasiaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelMutavel.add(cardFantasia, "cardFantasia");
+
+        cardSuspense.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel11.setText("Suspense");
+
+        jSeparator7.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout cardSuspenseLayout = new javax.swing.GroupLayout(cardSuspense);
+        cardSuspense.setLayout(cardSuspenseLayout);
+        cardSuspenseLayout.setHorizontalGroup(
+            cardSuspenseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardSuspenseLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cardSuspenseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cardSuspenseLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(0, 547, Short.MAX_VALUE))
+                    .addComponent(jSeparator7))
+                .addContainerGap())
+        );
+        cardSuspenseLayout.setVerticalGroup(
+            cardSuspenseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardSuspenseLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelMutavel.add(cardSuspense, "cardSuspense");
+
+        cardRomance.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel12.setText("Romance");
+
+        jSeparator8.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout cardRomanceLayout = new javax.swing.GroupLayout(cardRomance);
+        cardRomance.setLayout(cardRomanceLayout);
+        cardRomanceLayout.setHorizontalGroup(
+            cardRomanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardRomanceLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cardRomanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cardRomanceLayout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addGap(0, 548, Short.MAX_VALUE))
+                    .addComponent(jSeparator8))
+                .addContainerGap())
+        );
+        cardRomanceLayout.setVerticalGroup(
+            cardRomanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardRomanceLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        painelMutavel.add(cardRomance, "cardRomance");
+
+        cardComedia.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel13.setText("Comédia");
+
+        jSeparator9.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout cardComediaLayout = new javax.swing.GroupLayout(cardComedia);
+        cardComedia.setLayout(cardComediaLayout);
+        cardComediaLayout.setHorizontalGroup(
+            cardComediaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardComediaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cardComediaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cardComediaLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(0, 555, Short.MAX_VALUE))
+                    .addComponent(jSeparator9))
+                .addContainerGap())
+        );
+        cardComediaLayout.setVerticalGroup(
+            cardComediaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardComediaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(577, Short.MAX_VALUE))
+        );
+
+        painelMutavel.add(cardComedia, "cardComedia");
+
+        cardTerror.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel14.setText("Terror");
+
+        jSeparator10.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout cardTerrorLayout = new javax.swing.GroupLayout(cardTerror);
+        cardTerror.setLayout(cardTerrorLayout);
+        cardTerrorLayout.setHorizontalGroup(
+            cardTerrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardTerrorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cardTerrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cardTerrorLayout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(0, 585, Short.MAX_VALUE))
+                    .addComponent(jSeparator10))
+                .addContainerGap())
+        );
+        cardTerrorLayout.setVerticalGroup(
+            cardTerrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardTerrorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(577, Short.MAX_VALUE))
+        );
+
+        painelMutavel.add(cardTerror, "cardTerror");
+
+        cardCulinaria.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel15.setText("Culinária");
+
+        jSeparator11.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout cardCulinariaLayout = new javax.swing.GroupLayout(cardCulinaria);
+        cardCulinaria.setLayout(cardCulinariaLayout);
+        cardCulinariaLayout.setHorizontalGroup(
+            cardCulinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardCulinariaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cardCulinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cardCulinariaLayout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addGap(0, 554, Short.MAX_VALUE))
+                    .addComponent(jSeparator11))
+                .addContainerGap())
+        );
+        cardCulinariaLayout.setVerticalGroup(
+            cardCulinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardCulinariaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(577, Short.MAX_VALUE))
+        );
+
+        painelMutavel.add(cardCulinaria, "cardCulinaria");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -280,32 +650,57 @@ public class UserViewHome extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(painelMutavel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelMutavel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botaoTerrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTerrorActionPerformed
+        cardLayout.show(painelMutavel, "cardTerror");
+    }//GEN-LAST:event_botaoTerrorActionPerformed
+
+    private void botaoComediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoComediaActionPerformed
+        cardLayout.show(painelMutavel, "cardComedia");
+    }//GEN-LAST:event_botaoComediaActionPerformed
+
+    private void botaoRomanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRomanceActionPerformed
+        cardLayout.show(painelMutavel, "cardRomance");
+    }//GEN-LAST:event_botaoRomanceActionPerformed
+
+    private void botaoSuspenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSuspenseActionPerformed
+        cardLayout.show(painelMutavel, "cardSuspense");
+    }//GEN-LAST:event_botaoSuspenseActionPerformed
+
+    private void botaoFantasiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFantasiaActionPerformed
+        cardLayout.show(painelMutavel, "cardFantasia");
+    }//GEN-LAST:event_botaoFantasiaActionPerformed
+
+    private void botaoEducacionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEducacionalActionPerformed
+        cardLayout.show(painelMutavel, "cardEducacional");
+    }//GEN-LAST:event_botaoEducacionalActionPerformed
+
+    private void botaoAventuraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAventuraActionPerformed
+        cardLayout.show(painelMutavel, "cardAventura");
+    }//GEN-LAST:event_botaoAventuraActionPerformed
+
+    private void botaoDestaquesDeHojeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDestaquesDeHojeActionPerformed
+        cardLayout.show(painelMutavel, "cardDestaquesDeHoje");
+    }//GEN-LAST:event_botaoDestaquesDeHojeActionPerformed
+
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void botaoCulinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCulinariaActionPerformed
+        cardLayout.show(painelMutavel, "cardCulinaria");
+    }//GEN-LAST:event_botaoCulinariaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -345,30 +740,61 @@ public class UserViewHome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSeparator SptMenu;
     private javax.swing.JSeparator SptMenu1;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botaoAventura;
+    private javax.swing.JButton botaoComedia;
+    private javax.swing.JButton botaoCulinaria;
+    private javax.swing.JButton botaoDestaquesDeHoje;
+    private javax.swing.JButton botaoEducacional;
+    private javax.swing.JButton botaoFantasia;
+    private javax.swing.JButton botaoRomance;
+    private javax.swing.JButton botaoSuspense;
+    private javax.swing.JButton botaoTerror;
+    private javax.swing.JPanel cardAventura;
+    private javax.swing.JPanel cardComedia;
+    private javax.swing.JPanel cardCulinaria;
+    private javax.swing.JPanel cardDestaquesDeHoje;
+    private javax.swing.JPanel cardEducacional;
+    private javax.swing.JPanel cardFantasia;
+    private javax.swing.JPanel cardRomance;
+    private javax.swing.JPanel cardSuspense;
+    private javax.swing.JPanel cardTerror;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JPanel painelMutavel;
     // End of variables declaration//GEN-END:variables
 }

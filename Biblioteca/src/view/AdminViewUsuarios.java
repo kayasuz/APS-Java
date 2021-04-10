@@ -196,6 +196,12 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
         LbNome.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         LbNome.setText("Nome");
 
+        TxtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtNomeActionPerformed(evt);
+            }
+        });
+
         LbEmail.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         LbEmail.setText("Email");
 
@@ -429,6 +435,10 @@ public class AdminViewUsuarios extends javax.swing.JFrame {
         TxtSenha.setText(null);
         TxtTelefone.setText(null);
     }//GEN-LAST:event_BtnLimparActionPerformed
+
+    private void TxtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtNomeActionPerformed
 
     /**
      * @param args the command line arguments
