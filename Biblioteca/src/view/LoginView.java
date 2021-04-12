@@ -24,6 +24,7 @@
  * THE SOFTWARE.
  */
 //</editor-fold>
+
 package view;
 
 import controller.LoginController;
@@ -159,6 +160,7 @@ public class LoginView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEntrarActionPerformed
