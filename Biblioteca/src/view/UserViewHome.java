@@ -65,12 +65,12 @@ public class UserViewHome extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         botaoDestaquesDeHoje = new javax.swing.JButton();
-        botaoAventura = new javax.swing.JButton();
+        botaoAutoAjuda = new javax.swing.JButton();
         botaoEducacional = new javax.swing.JButton();
         botaoFantasia = new javax.swing.JButton();
         botaoSuspense = new javax.swing.JButton();
         botaoRomance = new javax.swing.JButton();
-        botaoComedia = new javax.swing.JButton();
+        botaoDistopia = new javax.swing.JButton();
         botaoTerror = new javax.swing.JButton();
         botaoMeuPerfil = new javax.swing.JButton();
         botaoHistorico = new javax.swing.JButton();
@@ -78,23 +78,14 @@ public class UserViewHome extends javax.swing.JFrame {
         botaoLogout = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        botaoFiccao = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        botaoCulinaria = new javax.swing.JButton();
         painelMutavel = new javax.swing.JPanel();
         cardDestaquesDeHoje = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jSeparator14 = new javax.swing.JSeparator();
         jLabel24 = new javax.swing.JLabel();
-        cardMeuPerfil = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jSeparator15 = new javax.swing.JSeparator();
-        cardAventura = new javax.swing.JPanel();
+        cardAutoAjuda = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel26 = new javax.swing.JLabel();
@@ -122,7 +113,7 @@ public class UserViewHome extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jSeparator10 = new javax.swing.JSeparator();
         jLabel33 = new javax.swing.JLabel();
-        cardCulinaria = new javax.swing.JPanel();
+        cardFiccao = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
         jLabel34 = new javax.swing.JLabel();
@@ -130,10 +121,29 @@ public class UserViewHome extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jSeparator13 = new javax.swing.JSeparator();
         jLabel27 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        botaoExcluirItem = new javax.swing.JButton();
+        botaoSolicitarAluguel = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
         cardHistorico = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
         jLabel25 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel36 = new javax.swing.JLabel();
+        botaoCulinaria1 = new javax.swing.JButton();
+        cardMeuPerfil = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jSeparator15 = new javax.swing.JSeparator();
 
         SptMenu.setForeground(new java.awt.Color(0, 0, 0));
         SptMenu.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -198,27 +208,24 @@ public class UserViewHome extends javax.swing.JFrame {
         botaoDestaquesDeHoje.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
         botaoDestaquesDeHoje.setText("Destaques de Hoje");
         botaoDestaquesDeHoje.setBorderPainted(false);
-        botaoDestaquesDeHoje.setFocusPainted(false);
         botaoDestaquesDeHoje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoDestaquesDeHojeActionPerformed(evt);
             }
         });
 
-        botaoAventura.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
-        botaoAventura.setText("Aventura");
-        botaoAventura.setBorderPainted(false);
-        botaoAventura.setFocusPainted(false);
-        botaoAventura.addActionListener(new java.awt.event.ActionListener() {
+        botaoAutoAjuda.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
+        botaoAutoAjuda.setText("Auto Ajuda");
+        botaoAutoAjuda.setBorderPainted(false);
+        botaoAutoAjuda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAventuraActionPerformed(evt);
+                botaoAutoAjudaActionPerformed(evt);
             }
         });
 
         botaoEducacional.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
         botaoEducacional.setText("Educacional");
         botaoEducacional.setBorderPainted(false);
-        botaoEducacional.setFocusPainted(false);
         botaoEducacional.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoEducacionalActionPerformed(evt);
@@ -228,7 +235,6 @@ public class UserViewHome extends javax.swing.JFrame {
         botaoFantasia.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
         botaoFantasia.setText("Fantasia");
         botaoFantasia.setBorderPainted(false);
-        botaoFantasia.setFocusPainted(false);
         botaoFantasia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoFantasiaActionPerformed(evt);
@@ -238,7 +244,6 @@ public class UserViewHome extends javax.swing.JFrame {
         botaoSuspense.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
         botaoSuspense.setText("Suspense");
         botaoSuspense.setBorderPainted(false);
-        botaoSuspense.setFocusPainted(false);
         botaoSuspense.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoSuspenseActionPerformed(evt);
@@ -248,27 +253,24 @@ public class UserViewHome extends javax.swing.JFrame {
         botaoRomance.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
         botaoRomance.setText("Romance");
         botaoRomance.setBorderPainted(false);
-        botaoRomance.setFocusPainted(false);
         botaoRomance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoRomanceActionPerformed(evt);
             }
         });
 
-        botaoComedia.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
-        botaoComedia.setText("Comédia");
-        botaoComedia.setBorderPainted(false);
-        botaoComedia.setFocusPainted(false);
-        botaoComedia.addActionListener(new java.awt.event.ActionListener() {
+        botaoDistopia.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
+        botaoDistopia.setText("Distopia");
+        botaoDistopia.setBorderPainted(false);
+        botaoDistopia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoComediaActionPerformed(evt);
+                botaoDistopiaActionPerformed(evt);
             }
         });
 
         botaoTerror.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
         botaoTerror.setText("Terror");
         botaoTerror.setBorderPainted(false);
-        botaoTerror.setFocusPainted(false);
         botaoTerror.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoTerrorActionPerformed(evt);
@@ -278,7 +280,6 @@ public class UserViewHome extends javax.swing.JFrame {
         botaoMeuPerfil.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
         botaoMeuPerfil.setText("Meu Perfil");
         botaoMeuPerfil.setBorderPainted(false);
-        botaoMeuPerfil.setFocusPainted(false);
         botaoMeuPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoMeuPerfilActionPerformed(evt);
@@ -288,7 +289,6 @@ public class UserViewHome extends javax.swing.JFrame {
         botaoHistorico.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
         botaoHistorico.setText("Histórico");
         botaoHistorico.setBorderPainted(false);
-        botaoHistorico.setFocusPainted(false);
         botaoHistorico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoHistoricoActionPerformed(evt);
@@ -298,7 +298,6 @@ public class UserViewHome extends javax.swing.JFrame {
         botaoCarrinho.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
         botaoCarrinho.setText("Carrinho");
         botaoCarrinho.setBorderPainted(false);
-        botaoCarrinho.setFocusPainted(false);
         botaoCarrinho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCarrinhoActionPerformed(evt);
@@ -308,7 +307,6 @@ public class UserViewHome extends javax.swing.JFrame {
         botaoLogout.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
         botaoLogout.setText("Logout");
         botaoLogout.setBorderPainted(false);
-        botaoLogout.setFocusPainted(false);
         botaoLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoLogoutActionPerformed(evt);
@@ -319,19 +317,18 @@ public class UserViewHome extends javax.swing.JFrame {
         jLabel4.setText("Bem-Vindo(a)");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setText("Nome do Completo do Usuário");
+        jLabel5.setText("Nome Completo do Usuário");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/open-book.png"))); // NOI18N
-
-        botaoCulinaria.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
-        botaoCulinaria.setText("Culinária");
-        botaoCulinaria.setBorderPainted(false);
-        botaoCulinaria.setFocusPainted(false);
-        botaoCulinaria.addActionListener(new java.awt.event.ActionListener() {
+        botaoFiccao.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
+        botaoFiccao.setText("Ficção");
+        botaoFiccao.setBorderPainted(false);
+        botaoFiccao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCulinariaActionPerformed(evt);
+                botaoFiccaoActionPerformed(evt);
             }
         });
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/open-book.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -345,42 +342,51 @@ public class UserViewHome extends javax.swing.JFrame {
                             .addComponent(jTextField1)
                             .addComponent(jSeparator1)
                             .addComponent(jSeparator3)
-                            .addComponent(botaoDestaquesDeHoje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator2)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(botaoHistorico, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoMeuPerfil, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(botaoAventura, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoEducacional, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoFantasia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoSuspense, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(botaoCarrinho, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoLogout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoRomance, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                    .addComponent(botaoComedia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoCulinaria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoTerror, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jSeparator2))
+                                .addComponent(botaoDestaquesDeHoje, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 10, Short.MAX_VALUE)))
                         .addGap(10, 10, 10))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4))
-                        .addGap(21, 21, 21))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(botaoHistorico, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botaoMeuPerfil, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(botaoEducacional, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botaoFantasia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botaoSuspense, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(botaoFiccao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(botaoCarrinho, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(botaoLogout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(10, 10, 10))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(botaoRomance, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(botaoDistopia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(botaoTerror, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(botaoAutoAjuda, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(28, 28, 28)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5))
@@ -401,12 +407,12 @@ public class UserViewHome extends javax.swing.JFrame {
                 .addComponent(botaoDestaquesDeHoje)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoAventura)
-                    .addComponent(botaoRomance))
+                    .addComponent(botaoRomance)
+                    .addComponent(botaoFiccao))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoEducacional)
-                    .addComponent(botaoComedia))
+                    .addComponent(botaoDistopia))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoFantasia)
@@ -414,7 +420,7 @@ public class UserViewHome extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoSuspense)
-                    .addComponent(botaoCulinaria))
+                    .addComponent(botaoAutoAjuda))
                 .addGap(38, 38, 38)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -454,7 +460,7 @@ public class UserViewHome extends javax.swing.JFrame {
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel10)
-                        .addGap(0, 398, Short.MAX_VALUE)))
+                        .addGap(0, 383, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         cardDestaquesDeHojeLayout.setVerticalGroup(
@@ -466,129 +472,48 @@ public class UserViewHome extends javax.swing.JFrame {
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(574, Short.MAX_VALUE))
+                .addContainerGap(648, Short.MAX_VALUE))
         );
 
         painelMutavel.add(cardDestaquesDeHoje, "cardDestaquesDeHoje");
 
-        cardMeuPerfil.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 11))); // NOI18N
-
-        jLabel16.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel16.setText("Nome: ");
-
-        jLabel17.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel17.setText("Endereço:");
-
-        jLabel18.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel18.setText("Email:");
-
-        jLabel19.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel19.setText("Telefone: ");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel19))
-                .addGap(0, 592, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel16)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel17)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel18)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel19)
-                .addContainerGap(75, Short.MAX_VALUE))
-        );
-
-        jLabel20.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel20.setText("Seu Perfil");
-
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/perfil.png"))); // NOI18N
-
-        jSeparator15.setBackground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout cardMeuPerfilLayout = new javax.swing.GroupLayout(cardMeuPerfil);
-        cardMeuPerfil.setLayout(cardMeuPerfilLayout);
-        cardMeuPerfilLayout.setHorizontalGroup(
-            cardMeuPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardMeuPerfilLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(cardMeuPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator15)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardMeuPerfilLayout.createSequentialGroup()
-                        .addComponent(jLabel23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel20)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        cardMeuPerfilLayout.setVerticalGroup(
-            cardMeuPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardMeuPerfilLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(cardMeuPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel20))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(151, 151, 151)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(210, Short.MAX_VALUE))
-        );
-
-        painelMutavel.add(cardMeuPerfil, "cardMeuPerfil");
-
-        cardAventura.setBackground(new java.awt.Color(255, 255, 255));
+        cardAutoAjuda.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setText("Aventura");
+        jLabel7.setText("Auto Ajuda");
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/aventura.png"))); // NOI18N
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/pessoas.png"))); // NOI18N
 
-        javax.swing.GroupLayout cardAventuraLayout = new javax.swing.GroupLayout(cardAventura);
-        cardAventura.setLayout(cardAventuraLayout);
-        cardAventuraLayout.setHorizontalGroup(
-            cardAventuraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardAventuraLayout.createSequentialGroup()
+        javax.swing.GroupLayout cardAutoAjudaLayout = new javax.swing.GroupLayout(cardAutoAjuda);
+        cardAutoAjuda.setLayout(cardAutoAjudaLayout);
+        cardAutoAjudaLayout.setHorizontalGroup(
+            cardAutoAjudaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardAutoAjudaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(cardAventuraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardAutoAjudaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator4)
-                    .addGroup(cardAventuraLayout.createSequentialGroup()
+                    .addGroup(cardAutoAjudaLayout.createSequentialGroup()
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7)
-                        .addGap(0, 513, Short.MAX_VALUE)))
+                        .addGap(0, 474, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        cardAventuraLayout.setVerticalGroup(
-            cardAventuraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardAventuraLayout.createSequentialGroup()
+        cardAutoAjudaLayout.setVerticalGroup(
+            cardAutoAjudaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardAutoAjudaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(cardAventuraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(cardAutoAjudaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel26)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(574, Short.MAX_VALUE))
+                .addContainerGap(644, Short.MAX_VALUE))
         );
 
-        painelMutavel.add(cardAventura, "cardAventura");
+        painelMutavel.add(cardAutoAjuda, "cardAutoAjuda");
 
         cardEducacional.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -611,7 +536,7 @@ public class UserViewHome extends javax.swing.JFrame {
                         .addComponent(jLabel28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8)
-                        .addGap(0, 478, Short.MAX_VALUE)))
+                        .addGap(0, 463, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         cardEducacionalLayout.setVerticalGroup(
@@ -623,7 +548,7 @@ public class UserViewHome extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(574, Short.MAX_VALUE))
+                .addContainerGap(648, Short.MAX_VALUE))
         );
 
         painelMutavel.add(cardEducacional, "cardEducacional");
@@ -649,7 +574,7 @@ public class UserViewHome extends javax.swing.JFrame {
                         .addComponent(jLabel29)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel9)
-                        .addGap(0, 521, Short.MAX_VALUE)))
+                        .addGap(0, 506, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         cardFantasiaLayout.setVerticalGroup(
@@ -661,7 +586,7 @@ public class UserViewHome extends javax.swing.JFrame {
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(574, Short.MAX_VALUE))
+                .addContainerGap(648, Short.MAX_VALUE))
         );
 
         painelMutavel.add(cardFantasia, "cardFantasia");
@@ -687,7 +612,7 @@ public class UserViewHome extends javax.swing.JFrame {
                         .addComponent(jLabel30)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel11)
-                        .addGap(0, 509, Short.MAX_VALUE)))
+                        .addGap(0, 494, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         cardSuspenseLayout.setVerticalGroup(
@@ -699,7 +624,7 @@ public class UserViewHome extends javax.swing.JFrame {
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(574, Short.MAX_VALUE))
+                .addContainerGap(648, Short.MAX_VALUE))
         );
 
         painelMutavel.add(cardSuspense, "cardSuspense");
@@ -725,7 +650,7 @@ public class UserViewHome extends javax.swing.JFrame {
                         .addComponent(jLabel31)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel12)
-                        .addGap(0, 510, Short.MAX_VALUE)))
+                        .addGap(0, 495, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         cardRomanceLayout.setVerticalGroup(
@@ -737,7 +662,7 @@ public class UserViewHome extends javax.swing.JFrame {
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(574, Short.MAX_VALUE))
+                .addContainerGap(648, Short.MAX_VALUE))
         );
 
         painelMutavel.add(cardRomance, "cardRomance");
@@ -745,11 +670,11 @@ public class UserViewHome extends javax.swing.JFrame {
         cardComedia.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel13.setText("Comédia");
+        jLabel13.setText("Distopia");
 
         jSeparator9.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/comedy-podcast.png"))); // NOI18N
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/manipulacao.png"))); // NOI18N
 
         javax.swing.GroupLayout cardComediaLayout = new javax.swing.GroupLayout(cardComedia);
         cardComedia.setLayout(cardComediaLayout);
@@ -763,7 +688,7 @@ public class UserViewHome extends javax.swing.JFrame {
                         .addComponent(jLabel35)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel13)
-                        .addGap(0, 517, Short.MAX_VALUE)))
+                        .addGap(0, 508, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         cardComediaLayout.setVerticalGroup(
@@ -775,10 +700,10 @@ public class UserViewHome extends javax.swing.JFrame {
                     .addComponent(jLabel35))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(571, Short.MAX_VALUE))
+                .addContainerGap(645, Short.MAX_VALUE))
         );
 
-        painelMutavel.add(cardComedia, "cardComedia");
+        painelMutavel.add(cardComedia, "cardDistopia");
 
         cardTerror.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -801,7 +726,7 @@ public class UserViewHome extends javax.swing.JFrame {
                         .addComponent(jLabel33)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel14)
-                        .addGap(0, 547, Short.MAX_VALUE)))
+                        .addGap(0, 532, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         cardTerrorLayout.setVerticalGroup(
@@ -813,48 +738,48 @@ public class UserViewHome extends javax.swing.JFrame {
                     .addComponent(jLabel14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(574, Short.MAX_VALUE))
+                .addContainerGap(648, Short.MAX_VALUE))
         );
 
         painelMutavel.add(cardTerror, "cardTerror");
 
-        cardCulinaria.setBackground(new java.awt.Color(255, 255, 255));
+        cardFiccao.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel15.setText("Culinária");
+        jLabel15.setText("Ficção");
 
         jSeparator11.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/culinaria.png"))); // NOI18N
+        jLabel34.setIcon(new javax.swing.ImageIcon("C:\\Users\\lucib\\Documents\\NetBeansProjects\\APS-Java\\Biblioteca\\src\\view\\imagens\\ficcao-cientifica.png")); // NOI18N
 
-        javax.swing.GroupLayout cardCulinariaLayout = new javax.swing.GroupLayout(cardCulinaria);
-        cardCulinaria.setLayout(cardCulinariaLayout);
-        cardCulinariaLayout.setHorizontalGroup(
-            cardCulinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCulinariaLayout.createSequentialGroup()
+        javax.swing.GroupLayout cardFiccaoLayout = new javax.swing.GroupLayout(cardFiccao);
+        cardFiccao.setLayout(cardFiccaoLayout);
+        cardFiccaoLayout.setHorizontalGroup(
+            cardFiccaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardFiccaoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(cardCulinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardFiccaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator11)
-                    .addGroup(cardCulinariaLayout.createSequentialGroup()
+                    .addGroup(cardFiccaoLayout.createSequentialGroup()
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel15)
-                        .addGap(0, 516, Short.MAX_VALUE)))
+                        .addGap(0, 530, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        cardCulinariaLayout.setVerticalGroup(
-            cardCulinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCulinariaLayout.createSequentialGroup()
+        cardFiccaoLayout.setVerticalGroup(
+            cardFiccaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardFiccaoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(cardCulinariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(cardFiccaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel15)
                     .addComponent(jLabel34))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(574, Short.MAX_VALUE))
+                .addContainerGap(648, Short.MAX_VALUE))
         );
 
-        painelMutavel.add(cardCulinaria, "cardCulinaria");
+        painelMutavel.add(cardFiccao, "cardFiccao");
 
         cardCarrinho.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -864,6 +789,47 @@ public class UserViewHome extends javax.swing.JFrame {
         jSeparator13.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/carrinho-de-compras.png"))); // NOI18N
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID Pedido", "ID Livro", "Nome do Livro", "Data"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+
+        botaoExcluirItem.setBackground(new java.awt.Color(102, 102, 102));
+        botaoExcluirItem.setForeground(new java.awt.Color(255, 255, 255));
+        botaoExcluirItem.setText("Excluir Item");
+        botaoExcluirItem.setBorderPainted(false);
+        botaoExcluirItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoExcluirItemActionPerformed(evt);
+            }
+        });
+
+        botaoSolicitarAluguel.setBackground(new java.awt.Color(102, 102, 102));
+        botaoSolicitarAluguel.setForeground(new java.awt.Color(255, 255, 255));
+        botaoSolicitarAluguel.setText("Solicitar Aluguel");
+        botaoSolicitarAluguel.setBorderPainted(false);
+        botaoSolicitarAluguel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSolicitarAluguelActionPerformed(evt);
+            }
+        });
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel32.setText("Livros no Carrinho");
 
         javax.swing.GroupLayout cardCarrinhoLayout = new javax.swing.GroupLayout(cardCarrinho);
         cardCarrinho.setLayout(cardCarrinhoLayout);
@@ -877,7 +843,22 @@ public class UserViewHome extends javax.swing.JFrame {
                         .addComponent(jLabel27)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel22)
-                        .addContainerGap(529, Short.MAX_VALUE))))
+                        .addContainerGap(514, Short.MAX_VALUE))))
+            .addGroup(cardCarrinhoLayout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addComponent(botaoExcluirItem, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botaoSolicitarAluguel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(cardCarrinhoLayout.createSequentialGroup()
+                .addGroup(cardCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cardCarrinhoLayout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cardCarrinhoLayout.createSequentialGroup()
+                        .addGap(229, 229, 229)
+                        .addComponent(jLabel32)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         cardCarrinhoLayout.setVerticalGroup(
             cardCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -888,7 +869,15 @@ public class UserViewHome extends javax.swing.JFrame {
                     .addComponent(jLabel22))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(574, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
+                .addComponent(jLabel32)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(cardCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoSolicitarAluguel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoExcluirItem, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(215, 215, 215))
         );
 
         painelMutavel.add(cardCarrinho, "cardCarrinho");
@@ -896,11 +885,50 @@ public class UserViewHome extends javax.swing.JFrame {
         cardHistorico.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel21.setText("Histórico");
+        jLabel21.setText("Histórico de Pedidos");
 
         jSeparator12.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/lista-de-afazeres.png"))); // NOI18N
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome Livro", "Data Aluguel", "Data Devolução", "Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Alugado", "Em Análise", "Reprovado", "Devolvido", " " }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel36.setText("Filtrar por:");
+
+        botaoCulinaria1.setBackground(new java.awt.Color(102, 102, 102));
+        botaoCulinaria1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        botaoCulinaria1.setForeground(new java.awt.Color(255, 255, 255));
+        botaoCulinaria1.setText("Pesquisar");
+        botaoCulinaria1.setBorderPainted(false);
+        botaoCulinaria1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCulinaria1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout cardHistoricoLayout = new javax.swing.GroupLayout(cardHistorico);
         cardHistorico.setLayout(cardHistoricoLayout);
@@ -914,8 +942,20 @@ public class UserViewHome extends javax.swing.JFrame {
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel21)
-                        .addGap(0, 514, Short.MAX_VALUE)))
+                        .addGap(0, 362, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardHistoricoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(113, 113, 113))
+            .addGroup(cardHistoricoLayout.createSequentialGroup()
+                .addGap(178, 178, 178)
+                .addComponent(jLabel36)
+                .addGap(14, 14, 14)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botaoCulinaria1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         cardHistoricoLayout.setVerticalGroup(
             cardHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -926,10 +966,107 @@ public class UserViewHome extends javax.swing.JFrame {
                     .addComponent(jLabel21))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(574, Short.MAX_VALUE))
+                .addGap(129, 129, 129)
+                .addGroup(cardHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel36)
+                    .addGroup(cardHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoCulinaria1)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(324, Short.MAX_VALUE))
         );
 
         painelMutavel.add(cardHistorico, "cardHistorico");
+
+        cardMeuPerfil.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 11))); // NOI18N
+        jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        jLabel16.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel16.setText("Nome: ");
+
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel17.setText("Endereço:");
+
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel18.setText("Email:");
+
+        jLabel19.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel19.setText("Telefone: ");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel19))
+                .addContainerGap(372, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel19)
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+
+        jLabel20.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel20.setText("Seu Perfil");
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/perfil.png"))); // NOI18N
+
+        jSeparator15.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout cardMeuPerfilLayout = new javax.swing.GroupLayout(cardMeuPerfil);
+        cardMeuPerfil.setLayout(cardMeuPerfilLayout);
+        cardMeuPerfilLayout.setHorizontalGroup(
+            cardMeuPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardMeuPerfilLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cardMeuPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator15, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(cardMeuPerfilLayout.createSequentialGroup()
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel20)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(cardMeuPerfilLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(144, Short.MAX_VALUE))
+        );
+        cardMeuPerfilLayout.setVerticalGroup(
+            cardMeuPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardMeuPerfilLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cardMeuPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(385, Short.MAX_VALUE))
+        );
+
+        jPanel2.getAccessibleContext().setAccessibleName("dados");
+
+        painelMutavel.add(cardMeuPerfil, "cardMeuPerfil");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -950,9 +1087,9 @@ public class UserViewHome extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botaoCulinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCulinariaActionPerformed
-        cardLayout.show(painelMutavel, "cardCulinaria");
-    }//GEN-LAST:event_botaoCulinariaActionPerformed
+    private void botaoFiccaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFiccaoActionPerformed
+        cardLayout.show(painelMutavel, "cardFiccao");
+    }//GEN-LAST:event_botaoFiccaoActionPerformed
 
     private void botaoLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLogoutActionPerformed
         new LoginView().setVisible(true);
@@ -975,9 +1112,9 @@ public class UserViewHome extends javax.swing.JFrame {
         cardLayout.show(painelMutavel, "cardTerror");
     }//GEN-LAST:event_botaoTerrorActionPerformed
 
-    private void botaoComediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoComediaActionPerformed
-        cardLayout.show(painelMutavel, "cardComedia");
-    }//GEN-LAST:event_botaoComediaActionPerformed
+    private void botaoDistopiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDistopiaActionPerformed
+        cardLayout.show(painelMutavel, "cardDistopia");
+    }//GEN-LAST:event_botaoDistopiaActionPerformed
 
     private void botaoRomanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRomanceActionPerformed
         cardLayout.show(painelMutavel, "cardRomance");
@@ -995,9 +1132,9 @@ public class UserViewHome extends javax.swing.JFrame {
         cardLayout.show(painelMutavel, "cardEducacional");
     }//GEN-LAST:event_botaoEducacionalActionPerformed
 
-    private void botaoAventuraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAventuraActionPerformed
-        cardLayout.show(painelMutavel, "cardAventura");
-    }//GEN-LAST:event_botaoAventuraActionPerformed
+    private void botaoAutoAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAutoAjudaActionPerformed
+        cardLayout.show(painelMutavel, "cardAutoAjuda");
+    }//GEN-LAST:event_botaoAutoAjudaActionPerformed
 
     private void botaoDestaquesDeHojeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDestaquesDeHojeActionPerformed
        cardLayout.show(painelMutavel, "cardDestaquesDeHoje");
@@ -1006,6 +1143,22 @@ public class UserViewHome extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
 
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void botaoExcluirItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExcluirItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoExcluirItemActionPerformed
+
+    private void botaoSolicitarAluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSolicitarAluguelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoSolicitarAluguelActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void botaoCulinaria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCulinaria1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoCulinaria1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1044,31 +1197,35 @@ public class UserViewHome extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSeparator SptMenu;
-    private javax.swing.JButton botaoAventura;
+    private javax.swing.JButton botaoAutoAjuda;
     private javax.swing.JButton botaoCarrinho;
-    private javax.swing.JButton botaoComedia;
-    private javax.swing.JButton botaoCulinaria;
+    private javax.swing.JButton botaoCulinaria1;
     private javax.swing.JButton botaoDestaquesDeHoje;
+    private javax.swing.JButton botaoDistopia;
     private javax.swing.JButton botaoEducacional;
+    private javax.swing.JButton botaoExcluirItem;
     private javax.swing.JButton botaoFantasia;
+    private javax.swing.JButton botaoFiccao;
     private javax.swing.JButton botaoHistorico;
     private javax.swing.JButton botaoLogout;
     private javax.swing.JButton botaoMeuPerfil;
     private javax.swing.JButton botaoRomance;
+    private javax.swing.JButton botaoSolicitarAluguel;
     private javax.swing.JButton botaoSuspense;
     private javax.swing.JButton botaoTerror;
-    private javax.swing.JPanel cardAventura;
+    private javax.swing.JPanel cardAutoAjuda;
     private javax.swing.JPanel cardCarrinho;
     private javax.swing.JPanel cardComedia;
-    private javax.swing.JPanel cardCulinaria;
     private javax.swing.JPanel cardDestaquesDeHoje;
     private javax.swing.JPanel cardEducacional;
     private javax.swing.JPanel cardFantasia;
+    private javax.swing.JPanel cardFiccao;
     private javax.swing.JPanel cardHistorico;
     private javax.swing.JPanel cardMeuPerfil;
     private javax.swing.JPanel cardRomance;
     private javax.swing.JPanel cardSuspense;
     private javax.swing.JPanel cardTerror;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1095,9 +1252,11 @@ public class UserViewHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1110,6 +1269,8 @@ public class UserViewHome extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -1125,6 +1286,8 @@ public class UserViewHome extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel painelMutavel;
     // End of variables declaration//GEN-END:variables
