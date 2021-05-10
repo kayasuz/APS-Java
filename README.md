@@ -6,7 +6,7 @@ Projeto de biblioteca eletrônica para a APS (Atividade Prática Supervisionada)
 ___
 
 ### Integrantes
-- Gabriel Pavan de Moura    (N58247-2)
-- João da Silva Nodari      (N62407-8)
-- João Aragão               (N642HJ-4)
-- Luciana Balsaneli         (N61591-5)
+- Gabriel Pavan de Moura      (N58247-2)
+- João da Silva Nodari        (N62407-8)
+- João Guilherme Aragão       (N642HJ-4)
+- Luciana Balsaneli Scabini   (N61591-5)
