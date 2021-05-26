@@ -31,14 +31,15 @@ import java.sql.SQLException;
 
 /**
  *
- * @authors kayas, joaon, lucib, ?
+ * @authors kayasuz, JoaoNodari and lucianabalsaneliscabini
  */
 public class Conexao {
-    
     public Connection getConnection() throws SQLException {
+        String url = "jdbc:postgresql://localhost:5432/BD_BIBLIOTECA";
+        String login = "postgres";
+        String senha = "070302";
         
-        Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/apsjava", "postgres", "joa5544");
-        
+        Connection conexao = DriverManager.getConnection(url, login, senha);
         return conexao;
     }
 }

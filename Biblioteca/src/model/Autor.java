@@ -23,18 +23,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  *///</editor-fold>
-package biblioteca;
+package model;
 
 /**
  *
- * @authors kayas, joaon, lucib, ?
+ * @authors kayasuz, JoaoNodari and lucianabalsaneliscabini
  */
-public class Biblioteca {
+public class Autor {
+    private int id;
+    private String nome;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // Classe principal
+    public Autor(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
     }
+    
+    //<editor-fold defaultstate="collapsed" desc="Getters e Setters">
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+    //</editor-fold>
 }

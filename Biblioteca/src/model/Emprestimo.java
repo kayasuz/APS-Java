@@ -29,56 +29,30 @@ package model;
  *
  * @authors kayasuz, JoaoNodari and lucianabalsaneliscabini
  */
-public class Livro {
+public class Emprestimo {
     private int id;
-    private String nome;
-    private int publicacao;
-    private String resumo;
-    private int quantidade;
-    private int categoria;
-    private int autor;
-    private String capa;
+    private int id_livro;
+    private int id_usuario;
 
-    public Livro(int id, String nome, int publicacao, String resumo, int quantidade, int categoria, int autor, String capa) {
+    public Emprestimo(int id, int id_livro, int id_usuario) {
         this.id = id;
-        this.nome = nome;
-        this.publicacao = publicacao;
-        this.resumo = resumo;
-        this.quantidade = quantidade;
-        this.categoria = categoria;
-        this.autor = autor;
-        this.capa = capa;
+        this.id_livro = id_livro;
+        this.id_usuario = id_usuario;
     }
 
-    public Livro(int id, String nome, int quantidade) {
-        this.id = id;
-        this.nome = nome;
-        this.quantidade = quantidade;
+    public Emprestimo(int id_livro, int id_usuario) {
+        this.id_livro = id_livro;
+        this.id_usuario = id_usuario;
     }
     
     //<editor-fold defaultstate="collapsed" desc="Getters e Setters">
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
+    public int getId_livro() { return id_livro; }
+    public void setId_livro(int id_livro) { this.id_livro = id_livro; }
 
-    public int getPublicacao() { return publicacao; }
-    public void setPublicacao(int publicacao) { this.publicacao = publicacao; }
-
-    public String getResumo() { return resumo; }
-    public void setResumo(String resumo) { this.resumo = resumo; }
-
-    public int getQuantidade() { return quantidade; }
-    public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
-
-    public int getCategoria() { return categoria; }
-    public void setCategoria(int categoria) { this.categoria = categoria; }
-
-    public int getAutor() { return autor; }
-    public void setAutor(int autor) { this.autor = autor; }
-
-    public String getCapa() { return capa; }
-    public void setCapa(String capa) { this.capa = capa; }
+    public int getId_usuario() { return id_usuario; }
+    public void setId_usuario(int id_usuario) { this.id_usuario = id_usuario; }
     //</editor-fold>
 }

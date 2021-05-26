@@ -29,31 +29,13 @@ package model;
  *
  * @authors kayasuz, JoaoNodari and lucianabalsaneliscabini
  */
-public class Livro {
+public class Categoria {
     private int id;
     private String nome;
-    private int publicacao;
-    private String resumo;
-    private int quantidade;
-    private int categoria;
-    private int autor;
-    private String capa;
 
-    public Livro(int id, String nome, int publicacao, String resumo, int quantidade, int categoria, int autor, String capa) {
+    public Categoria(int id, String nome) {
         this.id = id;
         this.nome = nome;
-        this.publicacao = publicacao;
-        this.resumo = resumo;
-        this.quantidade = quantidade;
-        this.categoria = categoria;
-        this.autor = autor;
-        this.capa = capa;
-    }
-
-    public Livro(int id, String nome, int quantidade) {
-        this.id = id;
-        this.nome = nome;
-        this.quantidade = quantidade;
     }
     
     //<editor-fold defaultstate="collapsed" desc="Getters e Setters">
@@ -62,23 +44,5 @@ public class Livro {
 
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
-
-    public int getPublicacao() { return publicacao; }
-    public void setPublicacao(int publicacao) { this.publicacao = publicacao; }
-
-    public String getResumo() { return resumo; }
-    public void setResumo(String resumo) { this.resumo = resumo; }
-
-    public int getQuantidade() { return quantidade; }
-    public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
-
-    public int getCategoria() { return categoria; }
-    public void setCategoria(int categoria) { this.categoria = categoria; }
-
-    public int getAutor() { return autor; }
-    public void setAutor(int autor) { this.autor = autor; }
-
-    public String getCapa() { return capa; }
-    public void setCapa(String capa) { this.capa = capa; }
     //</editor-fold>
 }

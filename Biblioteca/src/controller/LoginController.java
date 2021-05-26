@@ -22,44 +22,54 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- */
-//</editor-fold>
+ *///</editor-fold>
 package controller;
 
 import dao.Conexao;
 import dao.UsuarioDAO;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Usuario;
-import view.AdminViewHome;
+import view.AdminView;
 import view.LoginView;
+import view.UserView;
 
 /**
  *
- * @authors kayas, joaon, lucib, ?
+ * @authors kayasuz, JoaoNodari and lucianabalsaneliscabini
  */
 public class LoginController {
     private final LoginView view;
     
     public LoginController(LoginView view) { this.view = view; }
     
-    public void autenticar() throws SQLException {
+    public void autenticar() {
         String userName =  view.getTxtUsuario().getText();
-        char[] senha = view.getTxtSenha().getPassword();
-        
+        String senha = view.getTxtSenha().getText();
         Usuario usuarioAutenticar = new Usuario(userName, senha);
         
-        Connection conexao = new Conexao().getConnection();
-        UsuarioDAO usuarioDao = new UsuarioDAO(conexao);
-        
-        boolean existe = usuarioDao.existeNoBancoPorUsuarioESenha(usuarioAutenticar);
-        
-        if(existe) {
-            view.dispose();
-            new AdminViewHome().setVisible(true);
-        }else {
-            JOptionPane.showMessageDialog(view, "Usuário e/ou senha inválidos.");
+        try {
+            Connection conexao = new Conexao().getConnection();
+            UsuarioDAO usuarioDao = new UsuarioDAO(conexao);
+            
+            boolean existe = usuarioDao.existeNoBancoPorUsuarioESenha(usuarioAutenticar);
+            
+            if(existe) {
+                view.dispose();
+                if(userName.equals("admin") && senha.equals("admin")) { new AdminView().setVisible(true); } 
+                else {
+                    new UserView().setVisible(true);
+                }
+            }else {
+                JOptionPane.showMessageDialog(view, "Usuário e/ou senha inválidos.");
+                view.getTxtUsuario().setText(null);
+                view.getTxtSenha().setText(null);
+            }
+        }catch(SQLException ex) {
+            Logger.getLogger(AdminView.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

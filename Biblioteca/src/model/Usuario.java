@@ -27,42 +27,51 @@ package model;
 
 /**
  *
- * @authors kayas, joaon, lucib, ?
+ * @authors kayasuz, JoaoNodari and lucianabalsaneliscabini
  */
 public class Usuario {
     private int id;
     private String usuario;
-    private char[] senha;
+    private String senha;
     private String nome;
     private String email;
     private String endereco;
     private String telefone;
+    private int nrAluguel;
+    
+    // Login do Usuário
+    public Usuario(String usuario, String senha) {
+        this.usuario = usuario;
+        this.senha = senha;
+    }
     
     // Cadastro do Usuário
-    public Usuario(int id, String usuario, char[] senha, String nome, String email, String endereco, String telefone) {
+    public Usuario(int id, String usuario, String senha, String nome, String email, String endereco, String telefone, int nrAluguel) {
+        this.id = id;
         this.usuario = usuario;
         this.senha = senha;
         this.nome = nome;
         this.email = email;
         this.endereco = endereco;
         this.telefone = telefone;
+        this.nrAluguel = nrAluguel;
+    }
+
+    public Usuario(int id, String nome, int nrAluguel) {
+        this.id = id;
+        this.nome = nome;
+        this.nrAluguel = nrAluguel;
     }
     
-    // Login do Usuário
-    public Usuario(String usuario, char[] senha) {
-        this.usuario = usuario;
-        this.senha = senha;
-    }
-    
-    // Getters e Setters
+    //<editor-fold defaultstate="collapsed" desc="Getters e Setters">
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
     public String getUsuario() { return usuario; }
     public void setUsuario(String usuario) { this.usuario = usuario; }
 
-    public char[] getSenha() { return senha; }
-    public void setSenha(char[] senha) { this.senha = senha; }
+    public String getSenha() { return senha; }
+    public void setSenha(String senha) { this.senha = senha; }
 
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
@@ -75,5 +84,8 @@ public class Usuario {
 
     public String getTelefone() { return telefone; }
     public void setTelefone(String telefone) { this.telefone = telefone; }
-    // Fim dos Getters e Setters
+    
+    public int getNrAluguel() { return nrAluguel; }
+    public void setNrAluguel(int nrAluguel) { this.nrAluguel = nrAluguel; }
+    //</editor-fold>
 }

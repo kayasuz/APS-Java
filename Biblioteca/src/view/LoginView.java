@@ -22,22 +22,16 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- */
-//</editor-fold>
-
+ *///</editor-fold>
 package view;
 
 import controller.LoginController;
-import java.awt.event.KeyEvent;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
  *
- * @authors kayas, joaon, lucib, ?
+ * @authors kayasuz, JoaoNodari and lucianabalsaneliscabini
  */
 public class LoginView extends javax.swing.JFrame {
     private final LoginController controller;
@@ -60,7 +54,8 @@ public class LoginView extends javax.swing.JFrame {
     private void initComponents() {
 
         LbIcone = new javax.swing.JLabel();
-        PainelLogin = new javax.swing.JPanel();
+        Login = new javax.swing.JPanel();
+        BoxLogin = new javax.swing.JPanel();
         LbUsuario = new javax.swing.JLabel();
         TxtUsuario = new javax.swing.JTextField();
         LbSenha = new javax.swing.JLabel();
@@ -72,61 +67,51 @@ public class LoginView extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 
-        LbIcone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/JJLG-icon.jpeg"))); // NOI18N
+        LbIcone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/JJLG.jpeg"))); // NOI18N
 
-        PainelLogin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Login.setBackground(new java.awt.Color(204, 204, 204));
+
+        BoxLogin.setBackground(new java.awt.Color(204, 204, 204));
+        BoxLogin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         LbUsuario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         LbUsuario.setText("Usuário");
 
-        TxtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                TxtUsuarioKeyPressed(evt);
-            }
-        });
-
         LbSenha.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         LbSenha.setText("Senha");
-
-        TxtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                TxtSenhaKeyPressed(evt);
-            }
-        });
 
         BtnEntrar.setBackground(new java.awt.Color(255, 255, 255));
         BtnEntrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BtnEntrar.setText("Entrar");
         BtnEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnEntrar.setOpaque(false);
         BtnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnEntrarActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout PainelLoginLayout = new javax.swing.GroupLayout(PainelLogin);
-        PainelLogin.setLayout(PainelLoginLayout);
-        PainelLoginLayout.setHorizontalGroup(
-            PainelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelLoginLayout.createSequentialGroup()
+        javax.swing.GroupLayout BoxLoginLayout = new javax.swing.GroupLayout(BoxLogin);
+        BoxLogin.setLayout(BoxLoginLayout);
+        BoxLoginLayout.setHorizontalGroup(
+            BoxLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BoxLoginLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(BoxLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LbSenha)
+                    .addComponent(LbUsuario))
+                .addGap(210, 210, 210))
+            .addGroup(BoxLoginLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PainelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TxtSenha)
-                    .addComponent(TxtUsuario, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(PainelLoginLayout.createSequentialGroup()
-                        .addGroup(PainelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LbSenha)
-                            .addComponent(LbUsuario))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(BoxLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TxtUsuario)
+                    .addComponent(BtnEntrar, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtSenha, javax.swing.GroupLayout.Alignment.CENTER))
                 .addContainerGap())
-            .addGroup(PainelLoginLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(BtnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
         );
-        PainelLoginLayout.setVerticalGroup(
-            PainelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelLoginLayout.createSequentialGroup()
+        BoxLoginLayout.setVerticalGroup(
+            BoxLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BoxLoginLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(LbUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -140,56 +125,45 @@ public class LoginView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
+        Login.setLayout(LoginLayout);
+        LoginLayout.setHorizontalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LoginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BoxLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        LoginLayout.setVerticalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LoginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BoxLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PainelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
+                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(LbIcone))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LbIcone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PainelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(Login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEntrarActionPerformed
-        try {
-            controller.autenticar();
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        controller.autenticar();
     }//GEN-LAST:event_BtnEntrarActionPerformed
-
-    private void TxtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtUsuarioKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            try {
-                controller.autenticar();
-            } catch (SQLException ex) {
-                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_TxtUsuarioKeyPressed
-
-    private void TxtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtSenhaKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            try {
-                controller.autenticar();
-            } catch (SQLException ex) {
-                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_TxtSenhaKeyPressed
 
     /**
      * @param args the command line arguments
@@ -202,7 +176,7 @@ public class LoginView extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -217,18 +191,21 @@ public class LoginView extends javax.swing.JFrame {
         });
     }
 
+    //<editor-fold defaultstate="collapsed" desc="Getters e Setters">
     public JTextField getTxtUsuario() { return TxtUsuario; }
     public void setTxtUsuario(JTextField TxtUsuario) { this.TxtUsuario = TxtUsuario; }
 
     public JPasswordField getTxtSenha() { return TxtSenha; }
     public void setTxtSenha(JPasswordField TxtSenha) { this.TxtSenha = TxtSenha; }
+    //</editor-fold>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BoxLogin;
     private javax.swing.JButton BtnEntrar;
     private javax.swing.JLabel LbIcone;
     private javax.swing.JLabel LbSenha;
     private javax.swing.JLabel LbUsuario;
-    private javax.swing.JPanel PainelLogin;
+    private javax.swing.JPanel Login;
     private javax.swing.JPasswordField TxtSenha;
     private javax.swing.JTextField TxtUsuario;
     // End of variables declaration//GEN-END:variables
