@@ -1,4 +1,4 @@
- //<editor-fold defaultstate="collapsed" desc="The MIT License">
+//<editor-fold defaultstate="collapsed" desc="The MIT License">
 /*
  * The MIT License
  *
@@ -43,11 +43,6 @@ public class UserView extends javax.swing.JFrame {
     public UserView() {
         initComponents();
         cardLayout = (CardLayout)(CardView.getLayout());
-//        LbNomeUsuario.setText();
-//        TxtNomePerfil.setText();
-//        TxtEnderecoPerfil.setText();
-//        TxtEmailPerfil.setText();
-//        TxtTelefonePerfil.setText();
     }
 
     /**
@@ -1750,7 +1745,6 @@ public class UserView extends javax.swing.JFrame {
 
     private void BtnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPerfilActionPerformed
         cardLayout.show(CardView, "cardMeuPerfil");
-        
     }//GEN-LAST:event_BtnPerfilActionPerformed
 
     private void BtnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLogoutActionPerformed
@@ -1783,12 +1777,14 @@ public class UserView extends javax.swing.JFrame {
             new UserView().setVisible(true);
         });
     }
-
+    
+    //<editor-fold defaultstate="collapsed" desc="Getters e Setters">
     public JLabel getLbNomeUsuario() { return LbNomeUsuario; }
     public void setLbNomeUsuario(JLabel LbNomeUsuario) { this.LbNomeUsuario = LbNomeUsuario; }
 
     public JTextField getTxtNomePerfil() { return TxtNomePerfil; }
     public void setTxtNomePerfil(JTextField TxtNomePerfil) { this.TxtNomePerfil = TxtNomePerfil; }
+    //</editor-fold>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AALbLivro1;
